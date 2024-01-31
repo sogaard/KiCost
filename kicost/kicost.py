@@ -271,6 +271,7 @@ def kicost(in_file, eda_name, out_filename, user_fields, ignore_fields, group_fi
                         pass
             debug_detailed('')
 
+    return parts
 
 # Maximum length of the name of the spreadsheet output generate, this is used in the multifiles to limit the
 # automatic name generation.

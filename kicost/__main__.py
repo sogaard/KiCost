@@ -28,6 +28,7 @@ import os
 import sys
 import platform
 import time
+import json
 try:
     import tqdm
 except ImportError:
@@ -35,6 +36,7 @@ except ImportError:
 import logging
 import subprocess
 # Debug, language and default configurations.
+
 from .global_vars import wxPythonNotPresent, DEF_MAX_COLUMN_W, W_CMDLINE
 # Sub systems can be imported before logger
 from .edas import get_registered_eda_names, set_edas_logger  # noqa: E402
@@ -332,6 +334,11 @@ def main_real():
                         metavar='BASE_PATH',
                         help='Force the base path for the APIs caches.')
 
+    parser.add_argument('--json',
+                        action='store_true',
+                        default=False,
+                        help='Save json for axetron dms')
+
     args = parser.parse_args()
 
     # Set up logging verbosity
@@ -466,13 +473,64 @@ def main_real():
 
     debug_obsessive('Started ' + kicost_version_info())
 
-    kicost(in_file=args.input, eda_name=args.eda,
+    parts = kicost(in_file=args.input, eda_name=args.eda,
            out_filename=args.output, collapse_refs=not args.no_collapse, suppress_cat_url=not args.show_cat_url,
            user_fields=args.fields, ignore_fields=args.ignore_fields,
            group_fields=args.group_fields, translate_fields=args.translate_fields,
            variant=args.variant, dist_list=dist_list, currency=args.currency, max_column_width=args.max_column_width,
            split_extra_fields=args.split_extra_fields, board_qty=args.board_qty)
 
+    if args.json:
+        newInfo={}
+        for part in parts:
+            if part.fields['axpn'].startswith('1-'):
+                #if part.fields['axid'] == 'MP-00229;MP-00315;MP-00810;MP-00811':
+                if len(part.refs) != 1:
+                    print(f"Problem with {part.refs}. Only expected one REF per row: {part.fields}")
+                    print("Stopping")
+                    import pdb; pdb.set_trace()
+                    
+                key = part.fields['axid']
+
+                tempInfo = {}
+                tempInfo['axpn']      = part.fields['axpn']
+                tempInfo['manf']      = part.fields['manf']
+                tempInfo['manf#']     = part.fields['manf#']
+                tempInfo['datasheet'] = part.datasheet
+                tempInfo['lifecycle'] = part.lifecycle
+                tempInfo['distributors'] = []
+                for distributor  in part.dd.keys():
+                    tempInfo['distributors'].append( (distributor, part.dd[distributor].part_num, part.dd[distributor].url) )
+        
+                if key not in newInfo.keys(): 
+                    newInfo[key] = tempInfo
+                else:
+                    #    import pdb; pdb.set_trace()
+                    
+                    for checkField in ['axpn']:
+                        if tempInfo[checkField] != newInfo[key][checkField]:
+                            print(f"Field {checkField} should have been identical")
+                            print(f"{tempInfo=}")
+                            print(f"{newInfo[key]=}")
+                            import pdb; pdb.set_trace()
+
+                if newInfo[key]['lifecycle'] == None:
+                    newInfo[key]['lifecycle'] = tempInfo['lifecycle']
+
+                if newInfo[key]['datasheet'] == None:
+                    newInfo[key]['datasheet'] = tempInfo['datasheet']
+
+                for line in tempInfo['distributors']:
+                    if line not in newInfo[key]['distributors']:
+                        newInfo[key]['distributors'].append(line)
+                    
+
+
+
+        jsonfilename = output_filename(args.input)[:-5] + ".json"
+
+        with open(jsonfilename,'w') as fid:
+            json.dump(newInfo, fid, indent=4)
 
 def main():
     try:
