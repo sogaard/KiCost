@@ -529,6 +529,7 @@ def main_real():
 
         jsonfilename = output_filename(args.input)[:-5] + ".json"
 
+        print(f"Saving {jsonfilename}")
         with open(jsonfilename,'w') as fid:
             json.dump(newInfo, fid, indent=4)
 
