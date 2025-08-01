@@ -64,3 +64,5 @@ server_stderr.txt
 server_stdout.txt
 
 tags
+
+.venv/
