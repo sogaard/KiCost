@@ -32,6 +32,7 @@ __company__ = 'University of Campinas - Brazil'
 
 # Libraries.
 import json
+import sys
 import requests
 import re
 import sys

@@ -70,7 +70,7 @@ distributors_info = {
                 order=DistributorOrder(
                     url='https://www.digikey.com/ordering/shoppingcart',
                     # header='Quantity,Stock#,Designators',
-                    cols=['purch', 'part_num', 'refs']),
+                    cols=['purch', 'part_num', 'axpn']),
                 ignore_cat=r'.+(DKR\-ND|\-6\-ND)$',
                 label=DistributorLabel('Digi-Key', 'https://www.digikey.com/', '#CC0000')),  # Digi-Key red.
     'farnell': DistributorInfo(
