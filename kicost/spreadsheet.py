@@ -687,8 +687,7 @@ def add_globals_to_worksheet(ss, start_row, start_col, total_cost_row, parts, di
     # Add the global part data to the spreadsheet.
     col_qty = start_col + col['qty']
     col_refs = start_col + col['refs']
-    for part in parts:
-
+    for part in sorted(parts, key=lambda p: p.fields['axpn']):
         # Enter part references.
         ss.write_string(row, col_refs, part.collapsed_refs, 'part_format')
 
