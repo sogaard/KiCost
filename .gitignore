@@ -65,4 +65,6 @@ server_stdout.txt
 
 tags
 
-.venv/
+.venv/*
+venv/*
+axetron/
