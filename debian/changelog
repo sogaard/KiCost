@@ -1,3 +1,21 @@
+kicost (1.1.20-1) stable; urgency=medium
+
+  * Added support for Digi-Key API V4
+  * Fixed Nexar problems when the API reports errors
+  * Fixed Element14 too fast queries
+  * Fixed problems with some malformed references when importing a CSV
+
+ -- Salvador Eduardo Tropea <salvador@inti.gob.ar>  Thu, 27 Mar 2025 13:31:26 -0300
+
+kicost (1.1.19-1) stable; urgency=medium
+
+  * Components groupings now isn't case sensitive
+  * Fixed Element14 issues when no RoHS info found
+  * Fixed Element14 country selection
+  * Added warning about missing config file
+
+ -- Salvador Eduardo Tropea <salvador@inti.gob.ar>  Mon, 06 May 2024 11:09:42 -0300
+
 kicost (1.1.18-1) stable; urgency=medium
 
   * Fixed problems when no arguments were specified

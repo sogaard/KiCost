@@ -8,3 +8,4 @@ validators >= 0.14.2 # For validation of datasheet URLs in the spreadsheet.
 colorama  # Colors for terminals
 pyyaml  # YAML parser
 kicost-digikey-api-v3
+kicost-digikey-api-v4

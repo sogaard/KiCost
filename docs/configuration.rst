@@ -26,6 +26,8 @@ The format is YAML and here is an example: ::
         # client_id: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
         # Digi-Key Client Secret for a registered APP
         # client_secret: XXXXXXXXXXXXXXXX
+        # Version of the Digi-Key API, use 4 unless you have old credentials for the V3 API
+        # version: 4
         # Use the sandbox server, doesn't count the usage, but returns old data
         # sandbox: false
         # Only enabled if the client_id and client_secret are defined
@@ -70,19 +72,6 @@ The format is YAML and here is an example: ::
         # country: US
         # Directory for the APIs caches
         # cache_path: ~/.cache/kicost/Nexar
-      TME:
-        # TME token (anonymous or private)
-        # token: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-        # TME application secret
-        # app_secret: XXXXXXXXXXXXXXXXXXXX
-        # Only enabled if the token and app_secret are defined
-        # enable: false
-        # Country where we are buying
-        # country: US
-        # Language for the texts
-        # language: EN
-        # Directory for the APIs caches
-        # cache_path: ~/.cache/kicost/TME
 
 Data from the APIs is cached `cache_ttl` days, using -1 means to keep them cached forever.
 Using 0 will force to do all searches again (no cache).
@@ -103,7 +92,7 @@ Then you have to register and get a `clientId` and a `clientSecret` to use in th
 
 The current Digi-Key plugin needs to validate the user using a complex mechanism. It will open a navigator
 window to get a token. If you get an error about a wrong certificate please ignore it. The obtained token
-is cached, so you don't need to validate it all the time.
+is cached, so you don't need to validate it all the time. For more information consult the DigiKey_PlugIn_site_.
 
 You can also define options using environment variables. As an example, you can specify Mouser's key defining
 the `MOUSER_KEY` environment variable. Note that environment variables has more precedence than the default config file.
@@ -111,3 +100,4 @@ But command line options, including any configuration file passed using it, has 
 
 .. _API_site: https://developer.digikey.com/get_started
 .. _Nexar: https://nexar.com/api
+.. _DigiKey_PlugIn_site: https://github.com/set-soft/kicost-digikey-api-v4/

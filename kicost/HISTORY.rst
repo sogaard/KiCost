@@ -3,6 +3,22 @@
 History
 -------
 
+1.1.20 (2025-03-27)
+_____________________
+* Added support for Digi-Key API V4
+* Fixed Nexar problems when the API reports errors
+* Fixed Element14 too fast queries
+* Fixed problems with some malformed references when importing a CSV
+
+
+1.1.19 (2023-05-06)
+_____________________
+* Components groupings now isn't case sensitive
+* Fixed Element14 issues when no RoHS info found
+* Fixed Element14 country selection
+* Added warning about missing config file
+
+
 1.1.18 (2023-06-22)
 _____________________
 * Fixed problems when no arguments were specified

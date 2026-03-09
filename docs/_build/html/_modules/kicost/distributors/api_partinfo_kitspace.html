@@ -1,23 +1,21 @@
-
 <!DOCTYPE html>
 
-<html>
+<html lang="en" data-content_root="../../../">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>kicost.distributors.api_partinfo_kitspace &#8212; kicost 1.1.18 documentation</title>
-    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../_static/classic.css" type="text/css" />
+    <title>kicost.distributors.api_partinfo_kitspace &#8212; kicost 1.1.20 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/classic.css?v=2bf1fcf8" />
     
-    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
-    <script src="../../../_static/jquery.js"></script>
-    <script src="../../../_static/underscore.js"></script>
-    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/documentation_options.js?v=88e83a66"></script>
+    <script src="../../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" /> 
   </head><body>
-    <div class="related" role="navigation" aria-label="related navigation">
+    <div class="related" role="navigation" aria-label="Related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -26,7 +24,7 @@
         <li class="right" >
           <a href="../../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">kicost 1.1.18 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">kicost 1.1.20 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../distributors.html" accesskey="U">kicost.distributors</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">kicost.distributors.api_partinfo_kitspace</a></li> 
@@ -138,7 +136,9 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">loaded</span> <span class="o">=</span> <span class="kc">False</span>
 
 
-<div class="viewcode-block" id="api_partinfo_kitspace"><a class="viewcode-back" href="../../../kicost.distributors.html#kicost.distributors.api_partinfo_kitspace.api_partinfo_kitspace">[docs]</a><span class="k">class</span> <span class="nc">api_partinfo_kitspace</span><span class="p">(</span><span class="n">distributor_class</span><span class="p">):</span>
+<div class="viewcode-block" id="api_partinfo_kitspace">
+<a class="viewcode-back" href="../../../kicost.distributors.html#kicost.distributors.api_partinfo_kitspace.api_partinfo_kitspace">[docs]</a>
+<span class="k">class</span> <span class="nc">api_partinfo_kitspace</span><span class="p">(</span><span class="n">distributor_class</span><span class="p">):</span>
     <span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;KitSpace&#39;</span>
     <span class="nb">type</span> <span class="o">=</span> <span class="s1">&#39;api&#39;</span>
     <span class="n">enabled</span> <span class="o">=</span> <span class="kc">False</span>
@@ -161,7 +161,9 @@
     <span class="n">env_prefix</span> <span class="o">=</span> <span class="s1">&#39;KITSPACE&#39;</span>
     <span class="n">env_ops</span> <span class="o">=</span> <span class="p">{}</span>
 
-<div class="viewcode-block" id="api_partinfo_kitspace.configure"><a class="viewcode-back" href="../../../kicost.distributors.html#kicost.distributors.api_partinfo_kitspace.api_partinfo_kitspace.configure">[docs]</a>    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="api_partinfo_kitspace.configure">
+<a class="viewcode-back" href="../../../kicost.distributors.html#kicost.distributors.api_partinfo_kitspace.api_partinfo_kitspace.configure">[docs]</a>
+    <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">configure</span><span class="p">(</span><span class="n">ops</span><span class="p">):</span>
         <span class="n">cache_ttl</span> <span class="o">=</span> <span class="mi">7</span>
         <span class="n">cache_path</span> <span class="o">=</span> <span class="kc">None</span>
@@ -175,9 +177,12 @@
         <span class="n">api_partinfo_kitspace</span><span class="o">.</span><span class="n">cache</span> <span class="o">=</span> <span class="n">QueryCache</span><span class="p">(</span><span class="n">cache_path</span><span class="p">,</span> <span class="n">cache_ttl</span><span class="p">)</span>
         <span class="n">debug_obsessive</span><span class="p">(</span><span class="s1">&#39;KitSpace API configured to enabled </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">api_partinfo_kitspace</span><span class="o">.</span><span class="n">enabled</span><span class="p">))</span></div>
 
-<div class="viewcode-block" id="api_partinfo_kitspace.query"><a class="viewcode-back" href="../../../kicost.distributors.html#kicost.distributors.api_partinfo_kitspace.api_partinfo_kitspace.query">[docs]</a>    <span class="nd">@staticmethod</span>
+
+<div class="viewcode-block" id="api_partinfo_kitspace.query">
+<a class="viewcode-back" href="../../../kicost.distributors.html#kicost.distributors.api_partinfo_kitspace.api_partinfo_kitspace.query">[docs]</a>
+    <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">query</span><span class="p">(</span><span class="n">query_parts</span><span class="p">,</span> <span class="n">distributors</span><span class="p">,</span> <span class="n">query_type</span><span class="o">=</span><span class="n">QUERY_MATCH</span><span class="p">):</span>
-        <span class="sd">&#39;&#39;&#39;Send query to server and return results.&#39;&#39;&#39;</span>
+<span class="w">        </span><span class="sd">&#39;&#39;&#39;Send query to server and return results.&#39;&#39;&#39;</span>
 
         <span class="n">distributors</span> <span class="o">=</span> <span class="p">[</span><span class="n">api_partinfo_kitspace</span><span class="o">.</span><span class="n">KICOST2KITSPACE_DIST</span><span class="p">[</span><span class="n">d</span><span class="p">]</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">distributors</span><span class="p">]</span>
         <span class="c1"># Allow changing the URL for debug purposes</span>
@@ -217,9 +222,12 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="k">raise</span> <span class="n">KiCostError</span><span class="p">(</span><span class="s1">&#39;Kitspace error: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="p">),</span> <span class="n">ERR_SCRAPE</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="api_partinfo_kitspace.get_spec"><a class="viewcode-back" href="../../../kicost.distributors.html#kicost.distributors.api_partinfo_kitspace.api_partinfo_kitspace.get_spec">[docs]</a>    <span class="nd">@staticmethod</span>
+
+<div class="viewcode-block" id="api_partinfo_kitspace.get_spec">
+<a class="viewcode-back" href="../../../kicost.distributors.html#kicost.distributors.api_partinfo_kitspace.api_partinfo_kitspace.get_spec">[docs]</a>
+    <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">get_spec</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">item</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-        <span class="sd">&#39;&#39;&#39;Get the value of `value` field of a dictionary if the `name` field identifier.</span>
+<span class="w">        </span><span class="sd">&#39;&#39;&#39;Get the value of `value` field of a dictionary if the `name` field identifier.</span>
 <span class="sd">        Used to get information from the JSON response.&#39;&#39;&#39;</span>
         <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;specs&#39;</span><span class="p">]:</span>
             <span class="k">if</span> <span class="n">d</span><span class="p">[</span><span class="s1">&#39;key&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">item</span><span class="p">:</span>
@@ -227,9 +235,12 @@
                 <span class="k">return</span> <span class="n">value</span> <span class="k">if</span> <span class="n">value</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">default</span>
         <span class="k">return</span> <span class="n">default</span></div>
 
-<div class="viewcode-block" id="api_partinfo_kitspace.query2name"><a class="viewcode-back" href="../../../kicost.distributors.html#kicost.distributors.api_partinfo_kitspace.api_partinfo_kitspace.query2name">[docs]</a>    <span class="nd">@staticmethod</span>
+
+<div class="viewcode-block" id="api_partinfo_kitspace.query2name">
+<a class="viewcode-back" href="../../../kicost.distributors.html#kicost.distributors.api_partinfo_kitspace.api_partinfo_kitspace.query2name">[docs]</a>
+    <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">query2name</span><span class="p">(</span><span class="n">query</span><span class="p">):</span>
-        <span class="sd">&#39;&#39;&#39; Finds the prefix and name for a query &#39;&#39;&#39;</span>
+<span class="w">        </span><span class="sd">&#39;&#39;&#39; Finds the prefix and name for a query &#39;&#39;&#39;</span>
         <span class="n">q</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
         <span class="n">mpn</span> <span class="o">=</span> <span class="n">q</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;mpn&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">mpn</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
@@ -242,9 +253,12 @@
                 <span class="n">name</span> <span class="o">=</span> <span class="n">sku</span><span class="p">[</span><span class="s1">&#39;vendor&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;_&#39;</span> <span class="o">+</span> <span class="n">sku</span><span class="p">[</span><span class="s1">&#39;part&#39;</span><span class="p">]</span>
         <span class="k">return</span> <span class="n">prefix</span><span class="p">,</span> <span class="n">name</span></div>
 
-<div class="viewcode-block" id="api_partinfo_kitspace.get_part_info"><a class="viewcode-back" href="../../../kicost.distributors.html#kicost.distributors.api_partinfo_kitspace.api_partinfo_kitspace.get_part_info">[docs]</a>    <span class="nd">@staticmethod</span>
+
+<div class="viewcode-block" id="api_partinfo_kitspace.get_part_info">
+<a class="viewcode-back" href="../../../kicost.distributors.html#kicost.distributors.api_partinfo_kitspace.api_partinfo_kitspace.get_part_info">[docs]</a>
+    <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">get_part_info</span><span class="p">(</span><span class="n">queries</span><span class="p">,</span> <span class="n">distributors</span><span class="p">):</span>
-        <span class="sd">&#39;&#39;&#39;Query PartInfo for quantity/price info.</span>
+<span class="w">        </span><span class="sd">&#39;&#39;&#39;Query PartInfo for quantity/price info.</span>
 <span class="sd">           `distributors` is the list of all distributors we want, in general. &#39;&#39;&#39;</span>
         <span class="n">only_query</span> <span class="o">=</span> <span class="p">[</span><span class="n">q</span><span class="o">.</span><span class="n">query</span> <span class="k">for</span> <span class="n">q</span> <span class="ow">in</span> <span class="n">queries</span><span class="p">]</span>
         <span class="n">results</span> <span class="o">=</span> <span class="n">api_partinfo_kitspace</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">only_query</span><span class="p">,</span> <span class="n">distributors</span><span class="p">)</span>
@@ -254,9 +268,12 @@
             <span class="n">prefix</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="n">api_partinfo_kitspace</span><span class="o">.</span><span class="n">query2name</span><span class="p">(</span><span class="n">queries</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">query</span><span class="p">)</span>
             <span class="n">api_partinfo_kitspace</span><span class="o">.</span><span class="n">cache</span><span class="o">.</span><span class="n">save_results</span><span class="p">(</span><span class="n">prefix</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="api_partinfo_kitspace.fill_part_info"><a class="viewcode-back" href="../../../kicost.distributors.html#kicost.distributors.api_partinfo_kitspace.api_partinfo_kitspace.fill_part_info">[docs]</a>    <span class="nd">@staticmethod</span>
+
+<div class="viewcode-block" id="api_partinfo_kitspace.fill_part_info">
+<a class="viewcode-back" href="../../../kicost.distributors.html#kicost.distributors.api_partinfo_kitspace.api_partinfo_kitspace.fill_part_info">[docs]</a>
+    <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">fill_part_info</span><span class="p">(</span><span class="n">queries</span><span class="p">,</span> <span class="n">distributors</span><span class="p">,</span> <span class="n">currency</span><span class="p">,</span> <span class="n">solved</span><span class="p">):</span>
-        <span class="sd">&#39;&#39;&#39; Place the results into the parts list. &#39;&#39;&#39;</span>
+<span class="w">        </span><span class="sd">&#39;&#39;&#39; Place the results into the parts list. &#39;&#39;&#39;</span>
         <span class="c1"># Translate from PartInfo distributor names to the names used internally by kicost.</span>
         <span class="n">dist_xlate</span> <span class="o">=</span> <span class="n">api_partinfo_kitspace</span><span class="o">.</span><span class="n">DIST_TRANSLATION</span>
 
@@ -356,9 +373,12 @@
                 <span class="c1"># We have data for this distributor</span>
                 <span class="n">solved</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">dist</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="api_partinfo_kitspace.query_part_info"><a class="viewcode-back" href="../../../kicost.distributors.html#kicost.distributors.api_partinfo_kitspace.api_partinfo_kitspace.query_part_info">[docs]</a>    <span class="nd">@staticmethod</span>
+
+<div class="viewcode-block" id="api_partinfo_kitspace.query_part_info">
+<a class="viewcode-back" href="../../../kicost.distributors.html#kicost.distributors.api_partinfo_kitspace.api_partinfo_kitspace.query_part_info">[docs]</a>
+    <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">query_part_info</span><span class="p">(</span><span class="n">parts</span><span class="p">,</span> <span class="n">distributors</span><span class="p">,</span> <span class="n">currency</span><span class="p">):</span>
-        <span class="sd">&#39;&#39;&#39;Fill-in the parts with price/qty/etc info from KitSpace.&#39;&#39;&#39;</span>
+<span class="w">        </span><span class="sd">&#39;&#39;&#39;Fill-in the parts with price/qty/etc info from KitSpace.&#39;&#39;&#39;</span>
         <span class="n">debug_overview</span><span class="p">(</span><span class="s1">&#39;# Getting part data from KitSpace...&#39;</span><span class="p">)</span>
 
         <span class="c1"># Use just the distributors avaliable in this API.</span>
@@ -440,7 +460,9 @@
         <span class="c1"># Transfer the results</span>
         <span class="n">solved_dist</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
         <span class="n">api_partinfo_kitspace</span><span class="o">.</span><span class="n">fill_part_info</span><span class="p">(</span><span class="n">queries</span><span class="p">,</span> <span class="n">distributors</span><span class="p">,</span> <span class="n">currency</span><span class="p">,</span> <span class="n">solved_dist</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">solved_dist</span></div></div>
+        <span class="k">return</span> <span class="n">solved_dist</span></div>
+</div>
+
 
 
 <span class="n">distributor_class</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">api_partinfo_kitspace</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
@@ -450,23 +472,23 @@
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
         <div class="sphinxsidebarwrapper">
-<div id="searchbox" style="display: none" role="search">
+<search id="searchbox" style="display: none" role="search">
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
-</div>
-<script>$('#searchbox').show(0);</script>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related" role="navigation" aria-label="related navigation">
+    <div class="related" role="navigation" aria-label="Related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -475,15 +497,15 @@
         <li class="right" >
           <a href="../../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">kicost 1.1.18 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">kicost 1.1.20 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../distributors.html" >kicost.distributors</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">kicost.distributors.api_partinfo_kitspace</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2015, XESS Corporation.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.4.3.
+    &#169; Copyright 2015, XESS Corporation.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
     </div>
   </body>
 </html>

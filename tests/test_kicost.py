@@ -3,8 +3,8 @@
 
 # MIT license
 #
-# Copyright (c) 2021-2022 Salvador E. Tropea
-# Copyright (c) 2021-2022 Instituto Nacional de Tecnología Industrial
+# Copyright (c) 2021-2025 Salvador E. Tropea
+# Copyright (c) 2021-2025 Instituto Nacional de Tecnología Industrial
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -352,7 +352,7 @@ def run_test_check(name, inputs=None, output=None, extra=None, price=True, ret_e
 
 def check_errors(errors):
     res = []
-    global last_err
+    # global last_err
     for error in errors:
         m = re.search(error, last_err, re.MULTILINE)
         assert m is not None, error
@@ -372,6 +372,11 @@ def test_acquire_PWM_1():
 def test_acquire_PWM_dk():
     name = 'acquire_PWM_dk'
     run_test_check(name, 'acquire-PWM', name, extra=['--include', 'digikey'], config_file='digikey.yaml')
+
+
+def test_acquire_PWM_dk_v4():
+    name = 'acquire_PWM_dk_v4'
+    run_test_check(name, 'acquire-PWM', name, extra=['--include', 'digikey'], config_file='digikey_v4.yaml')
 
 
 def test_acquire_PWM_eur_dk():
