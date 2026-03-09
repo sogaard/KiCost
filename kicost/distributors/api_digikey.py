@@ -189,7 +189,10 @@ class api_digikey(distributor_class):
                 if api_digikey.version == 3:
                     # Extract v3 data
                     primary_datasheet = data.primary_datasheet
-                    product_status = data.product_status.lower()
+                    try:
+                        product_status = data.product_status.lower()
+                    except:
+                        product_status = ""
                     specs = {sp.parameter.lower(): (sp.parameter, sp.value) for sp in data.parameters}
                     ro_hs_status = data.ro_hs_status
                     minimum_order_quantity = data.minimum_order_quantity
